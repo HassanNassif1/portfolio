@@ -1092,3 +1092,268 @@ body {
     transform: none !important;
   }
 }
+/* ===== HAMBURGER MENU - TECH STYLE ===== */
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(14, 165, 233, 0.05);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger-btn:hover {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.2);
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #94a3b8;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background: #0ea5e9;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  background: #0ea5e9;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+}
+
+/* Mobile Menu Overlay */
+.nav-links.open {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: rgba(3, 7, 18, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid rgba(14, 165, 233, 0.2);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+  animation: slideInMenu 0.3s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes slideInMenu {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile menu backdrop */
+.nav-links.open::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  animation: fadeInBackdrop 0.3s ease forwards;
+}
+
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nav-links.open .nav-btn {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  color: #94a3b8;
+  border: 1px solid transparent;
+}
+
+.nav-links.open .nav-btn:hover {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: rgba(14, 165, 233, 0.3);
+  color: #ffffff;
+  transform: translateX(-4px);
+}
+
+.nav-links.open .nav-btn.active {
+  color: #ffffff;
+  background: rgba(14, 165, 233, 0.15);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.2);
+}
+
+.nav-links.open .nav-btn .nav-indicator {
+  color: #0ea5e9;
+  font-weight: 700;
+  margin-right: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links.open .nav-btn.active .nav-indicator {
+  opacity: 1;
+}
+
+.nav-links.open li {
+  width: 100%;
+  list-style: none;
+}
+
+/* Mobile responsive breakpoints */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-links.open {
+    display: flex;
+  }
+  
+  /* Hide scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .nav-links.open {
+    width: 100%;
+    border-left: none;
+  }
+  
+  .nav-links.open .nav-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+  
+  .hamburger-btn {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+  
+  .hamburger-line {
+    width: 20px;
+    height: 2px;
+  }
+  
+  .hamburger-btn.active .hamburger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  
+  .hamburger-btn.active .hamburger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav-links.open {
+    width: 320px;
+  }
+}
+
+/* Fix for navbar when menu is open */
+.navbar.menu-open {
+  background: rgba(3, 7, 18, 0.98);
+}
+
+/* Glow effect on hamburger when active */
+.hamburger-btn.active {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+  background: rgba(14, 165, 233, 0.1);
+}
+
+/* Status indicator dot on mobile menu items */
+.nav-links.open .nav-btn::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  width: 6px;
+  height: 6px;
+  background: #64748b;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.nav-links.open .nav-btn.active::after {
+  background: #0ea5e9;
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.6);
+  animation: pulseDot 2s infinite;
+}
+
+/* Tech-style menu divider */
+.nav-links.open li:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(14, 165, 233, 0.3), transparent);
+  margin: 0.5rem auto;
+}
+
+/* Accessibility: Focus styles */
+.hamburger-btn:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .nav-links.open {
+    animation: none;
+  }
+  
+  .nav-links.open::before {
+    animation: none;
+  }
+  
+  .hamburger-line {
+    transition-duration: 0.01ms;
+  }
+}
