@@ -1,0 +1,7 @@
+[build]
+  publish = "dist"
+
+[[plugins]]
+  package = "@netlify/plugin-prerender"
+  [plugins.inputs]
+    paths = ["/"]

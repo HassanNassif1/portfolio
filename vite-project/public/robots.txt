@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hassannassif.netlify.app/sitemap.xml

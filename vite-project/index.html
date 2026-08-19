@@ -2,12 +2,159 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vite-project</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Primary Meta Tags - CRITICAL for SEO -->
+    <title>Hassan Nassif | Software Engineer &amp; Full-Stack Developer</title>
+    <meta name="title" content="Hassan Nassif | Software Engineer &amp; Full-Stack Developer" />
+    <meta name="description" content="Full-Stack Developer specializing in React, ASP.NET Core, PostgreSQL, and scalable web infrastructure. View my portfolio of 6+ projects including CRM systems and SaaS platforms." />
+    <meta name="keywords" content="Full-Stack Developer, React Developer, ASP.NET Core, Software Engineer, Web Developer, Portfolio, PostgreSQL, Node.js, CRM, SaaS" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <link rel="canonical" href="https://hassannassif.netlify.app/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hassannassif.netlify.app/" />
+    <meta property="og:title" content="Hassan Nassif | Software Engineer &amp; Full-Stack Developer" />
+    <meta property="og:description" content="Full-Stack Developer portfolio showcasing React, ASP.NET Core, PostgreSQL projects. Available for hire." />
+    <meta property="og:image" content="https://hassannassif.netlify.app/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hassannassif.netlify.app/" />
+    <meta property="twitter:title" content="Hassan Nassif | Software Engineer &amp; Full-Stack Developer" />
+    <meta property="twitter:description" content="Full-Stack Developer portfolio - React, ASP.NET Core, PostgreSQL" />
+    <meta property="twitter:image" content="https://hassannassif.netlify.app/og-image.jpg" />
+    
+    <!-- Additional SEO -->
+    <meta name="author" content="Hassan Nassif" />
+    <meta name="copyright" content="Hassan Nassif" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    
+    <!-- Your CSS and JS -->
+    <script type="module" src="/src/main.jsx"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hassan Nassif",
+        "jobTitle": "Software Engineer &amp; Full-Stack Developer",
+        "url": "https://hassannassif.netlify.app/",
+        "sameAs": [
+          "https://github.com/hassannassif",
+          "https://linkedin.com/in/hassannassif"
+        ],
+        "knowsAbout": [
+          "React",
+          "ASP.NET Core",
+          "PostgreSQL",
+          "Node.js",
+          "Laravel",
+          "RESTful API Design",
+          "Cloud Infrastructure",
+          "CRM Implementation",
+          "Database Architecture"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "AUL University"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "CIS College"
+          }
+        ]
+      }
+    </script>
+    
+    <!-- Portfolio Items Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Energy Bridge CRM",
+              "description": "Full-stack ERP platform with IP network management, ticketing modules, and telemetry reporting.",
+              "url": "https://hassannassif.netlify.app/projects/energy-bridge-crm"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Digital Connects",
+              "description": "Social operations dashboard for client records, account data, invoices, and profit analytics.",
+              "url": "https://hassannassif.netlify.app/projects/digital-connects"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "TbilisiDiscover",
+              "description": "Business intelligence directory tracking 200+ active venues with custom entity management.",
+              "url": "https://hassannassif.netlify.app/projects/tbilisidiscover"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "DevXLine SaaS",
+              "description": "Multi-tenant CRM ecosystem for automated client onboarding and pipeline management.",
+              "url": "https://hassannassif.netlify.app/projects/devxline-saas"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Estishara",
+              "description": "Automated consulate booking engine for appointment slot allocation and tracking.",
+              "url": "https://hassannassif.netlify.app/projects/estishara"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Scandiweb E-Commerce",
+              "description": "Modular storefront with dynamic catalog indexing and secure checkout flows.",
+              "url": "https://hassannassif.netlify.app/projects/scandiweb-ecommerce"
+            }
+          }
+        ]
+      }
+    </script>
   </body>
 </html>
