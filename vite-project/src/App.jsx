@@ -291,8 +291,8 @@ const App = () => {
             <div className="section-header animate-on-scroll fade-in-up">
               <h2 className="section-title"><i className="fas fa-satellite-dish"></i> Transmission Hub</h2>
             </div>
-            <div className="contact-container">
-              <div className="contact-info animate-on-scroll fade-in-left">
+            <div className="contact-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+              <div className="contact-info animate-on-scroll fade-in-left" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', maxWidth: '800px' }}>
                 <div className="contact-item">
                   <div className="contact-icon-box"><i className="fas fa-envelope"></i></div>
                   <div>
@@ -304,14 +304,14 @@ const App = () => {
                   <div className="contact-icon-box"><i className="fas fa-phone-alt"></i></div>
                   <div>
                     <h4>Direct Comm Line</h4>
-                    <a href="tel:+995555123456"><i className="fas fa-phone"></i> +995 555 12 34 56</a>
+                    <a href="tel:+96170748266"><i className="fas fa-phone"></i> +961 70 748 266</a>
                   </div>
                 </div>
                 <div className="contact-item">
                   <div className="contact-icon-box"><i className="fab fa-linkedin-in"></i></div>
                   <div>
                     <h4>Network Node</h4>
-                    <a href="https://linkedin.com/in/hassan-nassif" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i> linkedin.com/in/hassan-nassif</a>
+                    <a href="https://www.linkedin.com/in/hassan-nassif-0b6b29313/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i> linkedin.com/in/hassan-nassif</a>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -322,26 +322,6 @@ const App = () => {
                   </div>
                 </div>
               </div>
-              <div className="contact-form-card animate-on-scroll fade-in-right">
-                <h3><i className="fas fa-paper-plane"></i> Transmit Message Packet</h3>
-                <form onSubmit={(e) => e.preventDefault()}>
-                  <div className="input-group">
-                    <i className="fas fa-user input-icon"></i>
-                    <input type="text" placeholder="Your Identifier (Name)" required />
-                  </div>
-                  <div className="input-group">
-                    <i className="fas fa-envelope input-icon"></i>
-                    <input type="email" placeholder="Return Address (Email)" required />
-                  </div>
-                  <div className="input-group">
-                    <i className="fas fa-comment input-icon"></i>
-                    <textarea rows="4" placeholder="Payload Data (Message)" required></textarea>
-                  </div>
-                  <button type="submit" className="btn btn-primary submit-btn">
-                    <span>Execute Transmission</span> <i className="fas fa-paper-plane"></i>
-                  </button>
-                </form>
-              </div>
             </div>
           </div>
         </section>
@@ -351,7 +331,7 @@ const App = () => {
         <div className="footer-content">
           <p>
             <i className="fas fa-terminal"></i> hassannassif.lb@gmail.com &nbsp;·&nbsp;
-            <i className="fas fa-phone-alt"></i> +995 555 12 34 56
+            <i className="fas fa-phone-alt"></i> +961 70 748 266
           </p>
           <p className="footer-meta">© 2026 Hassan Nassif · System Build v4.2.0 · Powered by React & CyberCSS</p>
         </div>
