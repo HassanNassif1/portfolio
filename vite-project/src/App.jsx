@@ -183,10 +183,10 @@ const App = () => {
                 </button>
               </div>
               <div className="social-links">
-                <a href="https://instagram.com/hassannassif" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <a href="https://www.instagram.com/hassan_nassiff?igsh=MWZvdmdtdWUxbWdwcg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-icon">
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href="https://linkedin.com/in/hassan-nassif" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <a href="https://www.linkedin.com/in/hassan-nassif-0b6b29313/" target="_blank" rel="noopener noreferrer" className="social-icon">
                   <i className="fab fa-linkedin-in"></i>
                 </a>
               </div>
@@ -318,7 +318,7 @@ const App = () => {
                   <div className="contact-icon-box"><i className="fab fa-instagram"></i></div>
                   <div>
                     <h4>Social Stream</h4>
-                    <a href="https://instagram.com/hassannassif" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i> @hassannassif</a>
+                    <a href="https://www.instagram.com/hassan_nassiff?igsh=MWZvdmdtdWUxbWdwcg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i> @hassannassif</a>
                   </div>
                 </div>
               </div>
@@ -333,7 +333,7 @@ const App = () => {
             <i className="fas fa-terminal"></i> hassannassif.lb@gmail.com &nbsp;·&nbsp;
             <i className="fas fa-phone-alt"></i> +961 70 748 266
           </p>
-          <p className="footer-meta">© 2026 Hassan Nassif · System Build v4.2.0 · Powered by React & CyberCSS</p>
+          <p className="footer-meta">© 2026 Hassan Nassif </p>
         </div>
       </footer>
     </div>
