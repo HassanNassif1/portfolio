@@ -26,7 +26,7 @@ const App = () => {
     window.addEventListener('scroll', handleScroll);
 
     const observerOptions = {
-      threshold: 0.1,
+      threshold: 0.15,
       rootMargin: '0px 0px -50px 0px'
     };
 
@@ -38,7 +38,7 @@ const App = () => {
       });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const animatedElements = document.querySelectorAll('.animate-on-scroll, .animation-stagger');
     animatedElements.forEach((el) => observer.observe(el));
 
     return () => {
@@ -47,7 +47,6 @@ const App = () => {
     };
   }, []);
 
-  // Prevent background scrolling when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add('menu-open');
@@ -138,7 +137,6 @@ const App = () => {
             <span className="logo-text">HN<span className="logo-dot">_</span></span>
           </div>
           
-          {/* Hamburger Menu Button */}
           <button 
             className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -188,7 +186,7 @@ const App = () => {
         <header id="home" className="hero">
           <div className="hero-glow"></div>
           <div className="hero-container">
-            <div className="hero-photo-showcase animate-on-scroll fade-in-up">
+            <div className="hero-photo-showcase animate-on-scroll">
               <div className="profile-wrapper">
                 <img src={profilePhoto} alt="Hassan Nassif" className="profile-img" />
                 <div className="profile-ring"></div>
@@ -199,7 +197,7 @@ const App = () => {
               </div>
             </div>
 
-            <div className="hero-content animate-on-scroll fade-in-up">
+            <div className="hero-content animate-on-scroll">
               <h1 className="name">Hassan Nassif</h1>
               <p className="title">&gt; Software Engineer & Full-Stack Developer_</p>
               <p className="bio">
@@ -223,86 +221,89 @@ const App = () => {
           </div>
         </header>
 
+        {/* SKILLS SECTION */}
         <section className="section skills-section">
-          <div className="section-content-wrapper" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
-            <div className="section-header animate-on-scroll fade-in-up">
+          <div className="section-inner animation-stagger">
+            <div className="section-header animate-on-scroll">
               <h2 className="section-title"><i className="fas fa-microchip"></i> Core Modules</h2>
             </div>
-            <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', width: '100%' }}>
-              <div className="skill-card animate-on-scroll fade-in-up" style={{ padding: '2rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                <div className="skill-icon-box" style={{ fontSize: '2rem', marginBottom: '1rem', color: '#4a9eff' }}><i className="fas fa-database"></i></div>
-                <h3 style={{ marginBottom: '1rem' }}>Data & Persistence</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fas fa-database" style={{ marginRight: '12px', color: '#4a9eff' }}></i> PostgreSQL & SQL Optimization</li>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fas fa-check-circle" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Data Validation & Integrity</li>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fas fa-chart-line" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Advanced Reporting & ETL</li>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fas fa-sitemap" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Database Architecture</li>
+            <div className="skills-grid">
+              <div className="skill-card">
+                <div className="skill-icon-box"><i className="fas fa-database"></i></div>
+                <h3>Data & Persistence</h3>
+                <ul>
+                  <li><i className="fas fa-database" style={{ marginRight: '12px', color: '#4a9eff' }}></i> PostgreSQL & SQL Optimization</li>
+                  <li><i className="fas fa-check-circle" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Data Validation & Integrity</li>
+                  <li><i className="fas fa-chart-line" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Advanced Reporting & ETL</li>
+                  <li><i className="fas fa-sitemap" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Database Architecture</li>
                 </ul>
               </div>
-              <div className="skill-card animate-on-scroll fade-in-up" style={{ animationDelay: '0.15s', padding: '2rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                <div className="skill-icon-box" style={{ fontSize: '2rem', marginBottom: '1rem', color: '#4a9eff' }}><i className="fas fa-server"></i></div>
-                <h3 style={{ marginBottom: '1rem' }}>Systems & Architecture</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fas fa-building" style={{ marginRight: '12px', color: '#4a9eff' }}></i> CRM & ERP Implementation</li>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fas fa-code-branch" style={{ marginRight: '12px', color: '#4a9eff' }}></i> RESTful API Design</li>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fas fa-cloud" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Cloud Infrastructure & Nginx</li>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fas fa-headset" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Client Support Systems</li>
+              <div className="skill-card">
+                <div className="skill-icon-box"><i className="fas fa-server"></i></div>
+                <h3>Systems & Architecture</h3>
+                <ul>
+                  <li><i className="fas fa-building" style={{ marginRight: '12px', color: '#4a9eff' }}></i> CRM & ERP Implementation</li>
+                  <li><i className="fas fa-code-branch" style={{ marginRight: '12px', color: '#4a9eff' }}></i> RESTful API Design</li>
+                  <li><i className="fas fa-cloud" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Cloud Infrastructure & Nginx</li>
+                  <li><i className="fas fa-headset" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Client Support Systems</li>
                 </ul>
               </div>
-              <div className="skill-card animate-on-scroll fade-in-up" style={{ animationDelay: '0.3s', padding: '2rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                <div className="skill-icon-box" style={{ fontSize: '2rem', marginBottom: '1rem', color: '#4a9eff' }}><i className="fas fa-code-branch"></i></div>
-                <h3 style={{ marginBottom: '1rem' }}>Tech Stack</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fab fa-react" style={{ marginRight: '12px', color: '#4a9eff' }}></i> React.js & JavaScript (ES6+)</li>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fas fa-cubes" style={{ marginRight: '12px', color: '#4a9eff' }}></i> ASP.NET Core Web API</li>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fab fa-node-js" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Node.js & Laravel</li>
-                  <li style={{ marginBottom: '0.75rem' }}><i className="fab fa-css3-alt" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Tailwind CSS & Git CI/CD</li>
+              <div className="skill-card">
+                <div className="skill-icon-box"><i className="fas fa-code-branch"></i></div>
+                <h3>Tech Stack</h3>
+                <ul>
+                  <li><i className="fab fa-react" style={{ marginRight: '12px', color: '#4a9eff' }}></i> React.js & JavaScript (ES6+)</li>
+                  <li><i className="fas fa-cubes" style={{ marginRight: '12px', color: '#4a9eff' }}></i> ASP.NET Core Web API</li>
+                  <li><i className="fab fa-node-js" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Node.js & Laravel</li>
+                  <li><i className="fab fa-css3-alt" style={{ marginRight: '12px', color: '#4a9eff' }}></i> Tailwind CSS & Git CI/CD</li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
+        {/* EDUCATION SECTION */}
         <section className="section edu-section">
-          <div className="section-content-wrapper" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
-            <div className="section-header animate-on-scroll fade-in-up">
+          <div className="section-inner animation-stagger">
+            <div className="section-header animate-on-scroll">
               <h2 className="section-title"><i className="fas fa-graduation-cap"></i> Academic Logs</h2>
             </div>
-            <div className="edu-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%' }}>
-              <div className="edu-item animate-on-scroll fade-in-up" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 2rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap' }}>
+            <div className="edu-list">
+              <div className="edu-item">
                 <div className="edu-content">
-                  <h3 style={{ marginBottom: '0.5rem' }}><i className="fas fa-university" style={{ marginRight: '10px', color: '#4a9eff' }}></i> AUL University</h3>
+                  <h3><i className="fas fa-university" style={{ marginRight: '10px', color: '#4a9eff' }}></i> AUL University</h3>
                   <p><i className="fas fa-laptop-code" style={{ marginRight: '10px', color: '#4a9eff' }}></i> B.S. in Computer Science</p>
                 </div>
-                <span className="edu-date" style={{ color: '#4a9eff' }}><i className="far fa-calendar-alt" style={{ marginRight: '8px' }}></i> 2018 – 2022</span>
+                <span className="edu-date"><i className="far fa-calendar-alt" style={{ marginRight: '8px' }}></i> 2018 – 2022</span>
               </div>
-              <div className="edu-item animate-on-scroll fade-in-up" style={{ animationDelay: '0.15s', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 2rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap' }}>
+              <div className="edu-item">
                 <div className="edu-content">
-                  <h3 style={{ marginBottom: '0.5rem' }}><i className="fas fa-school" style={{ marginRight: '10px', color: '#4a9eff' }}></i> CIS College</h3>
+                  <h3><i className="fas fa-school" style={{ marginRight: '10px', color: '#4a9eff' }}></i> CIS College</h3>
                   <p><i className="fas fa-network-wired" style={{ marginRight: '10px', color: '#4a9eff' }}></i> B.S. in Information Technology</p>
                 </div>
-                <span className="edu-date" style={{ color: '#4a9eff' }}><i className="far fa-calendar-alt" style={{ marginRight: '8px' }}></i> 2016 – 2018</span>
+                <span className="edu-date"><i className="far fa-calendar-alt" style={{ marginRight: '8px' }}></i> 2016 – 2018</span>
               </div>
             </div>
           </div>
         </section>
 
+        {/* PROJECTS SECTION */}
         <section id="projects" className="section projects-section">
-          <div className="section-content-wrapper" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
-            <div className="section-header animate-on-scroll fade-in-up">
+          <div className="section-inner animation-stagger">
+            <div className="section-header animate-on-scroll">
               <h2 className="section-title"><i className="fas fa-project-diagram"></i> My Work</h2>
             </div>
-            <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', width: '100%' }}>
+            <div className="projects-grid">
               {projects.map((project, index) => (
-                <div className="project-card animate-on-scroll fade-in-up" key={index} style={{ animationDelay: `${index * 0.1}s`, padding: '2rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
-                  <div className="project-top" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                    <div className="folder-icon" style={{ fontSize: '2rem', color: '#4a9eff' }}><i className={`fas ${project.icon}`}></i></div>
-                    <h3 style={{ fontSize: '1.25rem' }}>{project.title}</h3>
+                <div className="project-card" key={index}>
+                  <div className="project-top">
+                    <div className="folder-icon"><i className={`fas ${project.icon}`}></i></div>
+                    <h3>{project.title}</h3>
                   </div>
-                  <p style={{ marginBottom: '1rem', lineHeight: '1.6' }}>{project.desc}</p>
-                  <div className="project-tech-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                  <p>{project.desc}</p>
+                  <div className="project-tech-list">
                     {project.tech.map((t, i) => (
-                      <span key={i} className="project-tech" style={{ padding: '0.4rem 0.8rem', background: 'rgba(74, 158, 255, 0.1)', borderRadius: '4px', fontSize: '0.85rem', color: '#4a9eff' }}>
+                      <span key={i} className="project-tech">
                         <i className={getTechIcon(t)} style={{ marginRight: '6px' }}></i> {t}
                       </span>
                     ))}
@@ -313,226 +314,44 @@ const App = () => {
           </div>
         </section>
 
+        {/* CONTACT SECTION */}
         <section id="contact" className="section contact-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div className="section-content-wrapper" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px', width: '100%' }}>
-            <div className="section-header animate-on-scroll fade-in-up" style={{ textAlign: 'center' }}>
+          <div className="section-inner animation-stagger">
+            <div className="section-header animate-on-scroll" style={{ textAlign: 'center' }}>
               <h2 className="section-title" style={{ justifyContent: 'center' }}>
                 <i className="fas fa-satellite-dish"></i> Transmission Hub
               </h2>
             </div>
-            <div className="contact-container" style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-              gap: '2rem',
-              width: '100%',
-              maxWidth: '1200px',
-              margin: '0 auto'
-            }}>
-              <div className="contact-item" style={{ 
-                display: 'flex', 
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                padding: '2.5rem 2rem', 
-                background: 'rgba(255,255,255,0.05)', 
-                borderRadius: '16px', 
-                border: '1px solid rgba(74, 158, 255, 0.2)',
-                transition: 'all 0.3s ease',
-                backdropFilter: 'blur(10px)',
-                minHeight: '180px',
-                justifyContent: 'center'
-              }}>
-                <div className="contact-icon-box" style={{ 
-                  fontSize: '2.5rem', 
-                  color: '#4a9eff', 
-                  marginBottom: '1rem',
-                  width: '70px',
-                  height: '70px',
-                  background: 'rgba(74, 158, 255, 0.1)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: '1px solid rgba(74, 158, 255, 0.3)'
-                }}>
-                  <i className="fas fa-envelope"></i>
-                </div>
+            <div className="contact-container">
+              <div className="contact-item">
+                <div className="contact-icon-box"><i className="fas fa-envelope"></i></div>
                 <div>
-                  <h4 style={{ 
-                    fontSize: '0.8rem', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '2px', 
-                    color: '#8892b0', 
-                    marginBottom: '0.5rem',
-                    fontFamily: 'Fira Code, monospace'
-                  }}>
-                    <i className="fas fa-lock" style={{ marginRight: '6px', fontSize: '0.6rem' }}></i> Secure Email
-                  </h4>
-                  <a href="mailto:hassannassif.lb@gmail.com" style={{ 
-                    color: '#ccd6f6', 
-                    textDecoration: 'none', 
-                    fontSize: '1rem',
-                    transition: 'color 0.3s ease',
-                    fontWeight: '500'
-                  }}>
-                    <i className="fas fa-at" style={{ marginRight: '8px', color: '#4a9eff' }}></i> hassannassif.lb@gmail.com
-                  </a>
+                  <h4><i className="fas fa-lock" style={{ marginRight: '6px', fontSize: '0.6rem' }}></i> Secure Email</h4>
+                  <a href="mailto:hassannassif.lb@gmail.com"><i className="fas fa-at" style={{ marginRight: '8px', color: '#4a9eff' }}></i> hassannassif.lb@gmail.com</a>
                 </div>
               </div>
 
-              <div className="contact-item" style={{ 
-                display: 'flex', 
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                padding: '2.5rem 2rem', 
-                background: 'rgba(255,255,255,0.05)', 
-                borderRadius: '16px', 
-                border: '1px solid rgba(74, 158, 255, 0.2)',
-                transition: 'all 0.3s ease',
-                backdropFilter: 'blur(10px)',
-                minHeight: '180px',
-                justifyContent: 'center'
-              }}>
-                <div className="contact-icon-box" style={{ 
-                  fontSize: '2.5rem', 
-                  color: '#4a9eff', 
-                  marginBottom: '1rem',
-                  width: '70px',
-                  height: '70px',
-                  background: 'rgba(74, 158, 255, 0.1)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: '1px solid rgba(74, 158, 255, 0.3)'
-                }}>
-                  <i className="fas fa-phone-alt"></i>
-                </div>
+              <div className="contact-item">
+                <div className="contact-icon-box"><i className="fas fa-phone-alt"></i></div>
                 <div>
-                  <h4 style={{ 
-                    fontSize: '0.8rem', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '2px', 
-                    color: '#8892b0', 
-                    marginBottom: '0.5rem',
-                    fontFamily: 'Fira Code, monospace'
-                  }}>
-                    <i className="fas fa-bolt" style={{ marginRight: '6px', fontSize: '0.6rem' }}></i> Direct Comm Line
-                  </h4>
-                  <a href="tel:+96170748266" style={{ 
-                    color: '#ccd6f6', 
-                    textDecoration: 'none', 
-                    fontSize: '1rem',
-                    transition: 'color 0.3s ease',
-                    fontWeight: '500'
-                  }}>
-                    <i className="fas fa-phone" style={{ marginRight: '8px', color: '#4a9eff' }}></i> +961 70 748 266
-                  </a>
+                  <h4><i className="fas fa-bolt" style={{ marginRight: '6px', fontSize: '0.6rem' }}></i> Direct Comm Line</h4>
+                  <a href="tel:+96170748266"><i className="fas fa-phone" style={{ marginRight: '8px', color: '#4a9eff' }}></i> +961 70 748 266</a>
                 </div>
               </div>
 
-              <div className="contact-item" style={{ 
-                display: 'flex', 
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                padding: '2.5rem 2rem', 
-                background: 'rgba(255,255,255,0.05)', 
-                borderRadius: '16px', 
-                border: '1px solid rgba(74, 158, 255, 0.2)',
-                transition: 'all 0.3s ease',
-                backdropFilter: 'blur(10px)',
-                minHeight: '180px',
-                justifyContent: 'center'
-              }}>
-                <div className="contact-icon-box" style={{ 
-                  fontSize: '2.5rem', 
-                  color: '#4a9eff', 
-                  marginBottom: '1rem',
-                  width: '70px',
-                  height: '70px',
-                  background: 'rgba(74, 158, 255, 0.1)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: '1px solid rgba(74, 158, 255, 0.3)'
-                }}>
-                  <i className="fab fa-linkedin-in"></i>
-                </div>
+              <div className="contact-item">
+                <div className="contact-icon-box"><i className="fab fa-linkedin-in"></i></div>
                 <div>
-                  <h4 style={{ 
-                    fontSize: '0.8rem', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '2px', 
-                    color: '#8892b0', 
-                    marginBottom: '0.5rem',
-                    fontFamily: 'Fira Code, monospace'
-                  }}>
-                    <i className="fas fa-globe" style={{ marginRight: '6px', fontSize: '0.6rem' }}></i> Network Node
-                  </h4>
-                  <a href="https://www.linkedin.com/in/hassan-nassif-0b6b29313/" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#ccd6f6', 
-                    textDecoration: 'none', 
-                    fontSize: '1rem',
-                    transition: 'color 0.3s ease',
-                    fontWeight: '500'
-                  }}>
-                    <i className="fab fa-linkedin" style={{ marginRight: '8px', color: '#4a9eff' }}></i> linkedin.com/in/hassan-nassif
-                  </a>
+                  <h4><i className="fas fa-globe" style={{ marginRight: '6px', fontSize: '0.6rem' }}></i> Network Node</h4>
+                  <a href="https://www.linkedin.com/in/hassan-nassif-0b6b29313/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin" style={{ marginRight: '8px', color: '#4a9eff' }}></i> linkedin.com/in/hassan-nassif</a>
                 </div>
               </div>
 
-              <div className="contact-item" style={{ 
-                display: 'flex', 
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                padding: '2.5rem 2rem', 
-                background: 'rgba(255,255,255,0.05)', 
-                borderRadius: '16px', 
-                border: '1px solid rgba(74, 158, 255, 0.2)',
-                transition: 'all 0.3s ease',
-                backdropFilter: 'blur(10px)',
-                minHeight: '180px',
-                justifyContent: 'center'
-              }}>
-                <div className="contact-icon-box" style={{ 
-                  fontSize: '2.5rem', 
-                  color: '#4a9eff', 
-                  marginBottom: '1rem',
-                  width: '70px',
-                  height: '70px',
-                  background: 'rgba(74, 158, 255, 0.1)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: '1px solid rgba(74, 158, 255, 0.3)'
-                }}>
-                  <i className="fab fa-instagram"></i>
-                </div>
+              <div className="contact-item">
+                <div className="contact-icon-box"><i className="fab fa-instagram"></i></div>
                 <div>
-                  <h4 style={{ 
-                    fontSize: '0.8rem', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '2px', 
-                    color: '#8892b0', 
-                    marginBottom: '0.5rem',
-                    fontFamily: 'Fira Code, monospace'
-                  }}>
-                    <i className="fas fa-share-alt" style={{ marginRight: '6px', fontSize: '0.6rem' }}></i> Social Stream
-                  </h4>
-                  <a href="https://www.instagram.com/hassan_nassiff?igsh=MWZvdmdtdWUxbWdwcg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#ccd6f6', 
-                    textDecoration: 'none', 
-                    fontSize: '1rem',
-                    transition: 'color 0.3s ease',
-                    fontWeight: '500'
-                  }}>
-                    <i className="fab fa-instagram" style={{ marginRight: '8px', color: '#4a9eff' }}></i> @hassannassif
-                  </a>
+                  <h4><i className="fas fa-share-alt" style={{ marginRight: '6px', fontSize: '0.6rem' }}></i> Social Stream</h4>
+                  <a href="https://www.instagram.com/hassan_nassiff?igsh=MWZvdmdtdWUxbWdwcg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram" style={{ marginRight: '8px', color: '#4a9eff' }}></i> @hassannassif</a>
                 </div>
               </div>
             </div>
@@ -540,13 +359,13 @@ const App = () => {
         </section>
       </div>
 
-      <footer className="footer" style={{ padding: '2rem 0', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: '2rem' }}>
-        <div className="footer-content" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
+      <footer className="footer animate-on-scroll">
+        <div className="footer-content">
           <p style={{ marginBottom: '0.5rem' }}>
             <i className="fas fa-terminal" style={{ marginRight: '8px', color: '#4a9eff' }}></i> hassannassif.lb@gmail.com &nbsp;·&nbsp;
             <i className="fas fa-phone-alt" style={{ marginRight: '8px', color: '#4a9eff' }}></i> +961 70 748 266
           </p>
-          <p className="footer-meta" style={{ color: '#8892b0', fontSize: '0.9rem' }}>© 2026 Hassan Nassif</p>
+          <p className="footer-meta">© 2026 Hassan Nassif</p>
         </div>
       </footer>
     </div>
