@@ -202,30 +202,30 @@ const App = () => {
                 <div className="skill-icon-box"><i className="fas fa-database"></i></div>
                 <h3>Data & Persistence</h3>
                 <ul>
-                  <li><i className="fas fa-database"></i>PostgreSQL & SQL Optimization</li>
-                  <li><i className="fas fa-check-circle"></i>Data Validation & Integrity</li>
-                  <li><i className="fas fa-chart-line"></i>Advanced Reporting & ETL</li>
-                  <li><i className="fas fa-sitemap"></i>Database Architecture</li>
+                  <li><i className="fas fa-database" style={{ marginRight: '10px' }}></i> PostgreSQL & SQL Optimization</li>
+                  <li><i className="fas fa-check-circle" style={{ marginRight: '10px' }}></i> Data Validation & Integrity</li>
+                  <li><i className="fas fa-chart-line" style={{ marginRight: '10px' }}></i> Advanced Reporting & ETL</li>
+                  <li><i className="fas fa-sitemap" style={{ marginRight: '10px' }}></i> Database Architecture</li>
                 </ul>
               </div>
               <div className="skill-card animate-on-scroll fade-in-up" style={{ animationDelay: '0.15s' }}>
                 <div className="skill-icon-box"><i className="fas fa-server"></i></div>
                 <h3>Systems & Architecture</h3>
                 <ul>
-                  <li><i className="fas fa-building"></i>CRM & ERP Implementation</li>
-                  <li><i className="fas fa-code-branch"></i>RESTful API Design</li>
-                  <li><i className="fas fa-cloud"></i>Cloud Infrastructure & Nginx</li>
-                  <li><i className="fas fa-headset"></i>Client Support Systems</li>
+                  <li><i className="fas fa-building" style={{ marginRight: '10px' }}></i> CRM & ERP Implementation</li>
+                  <li><i className="fas fa-code-branch" style={{ marginRight: '10px' }}></i> RESTful API Design</li>
+                  <li><i className="fas fa-cloud" style={{ marginRight: '10px' }}></i> Cloud Infrastructure & Nginx</li>
+                  <li><i className="fas fa-headset" style={{ marginRight: '10px' }}></i> Client Support Systems</li>
                 </ul>
               </div>
               <div className="skill-card animate-on-scroll fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <div className="skill-icon-box"><i className="fas fa-code-branch"></i></div>
                 <h3>Tech Stack</h3>
                 <ul>
-                  <li><i className="fab fa-react"></i>React.js & JavaScript (ES6+)</li>
-                  <li><i className="fas fa-cubes"></i>ASP.NET Core Web API</li>
-                  <li><i className="fab fa-node-js"></i>Node.js & Laravel</li>
-                  <li><i className="fab fa-css3-alt"></i>Tailwind CSS & Git CI/CD</li>
+                  <li><i className="fab fa-react" style={{ marginRight: '10px' }}></i> React.js & JavaScript (ES6+)</li>
+                  <li><i className="fas fa-cubes" style={{ marginRight: '10px' }}></i> ASP.NET Core Web API</li>
+                  <li><i className="fab fa-node-js" style={{ marginRight: '10px' }}></i> Node.js & Laravel</li>
+                  <li><i className="fab fa-css3-alt" style={{ marginRight: '10px' }}></i> Tailwind CSS & Git CI/CD</li>
                 </ul>
               </div>
             </div>
