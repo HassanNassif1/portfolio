@@ -159,15 +159,11 @@ const App = () => {
                 <div className="tech-corner bl"></div>
                 <div className="tech-corner br"></div>
               </div>
-              <div className="photo-caption">
-                <span className="badge-dot"></span> OP_ID: HASSAN_NASSIF // STATUS: ACTIVE
-              </div>
+            
             </div>
 
             <div className="hero-content animate-on-scroll fade-in-up">
-              <div className="badge">
-                <span className="badge-dot"></span> SYSTEM ONLINE: AVAILABLE FOR HIRE
-              </div>
+            
               <h1 className="name">Hassan Nassif</h1>
               <p className="title">&gt; Software Engineer & Full-Stack Developer_</p>
               <p className="bio">
