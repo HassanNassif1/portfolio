@@ -178,9 +178,7 @@ const App = () => {
                 <a href="mailto:hassannassif.lb@gmail.com" className="btn btn-primary">
                   <i className="fas fa-terminal"></i> Initialize Contact
                 </a>
-                <button onClick={() => scrollToSection('contact')} className="btn btn-outline">
-                  <i className="fas fa-calendar-alt"></i> Schedule Protocol
-                </button>
+               
               </div>
               <div className="social-links">
                 <a href="https://www.instagram.com/hassan_nassiff?igsh=MWZvdmdtdWUxbWdwcg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-icon">
